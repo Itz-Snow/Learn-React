@@ -1,0 +1,22 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+.header-bar{
+  background-color: #f55a5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  /* border-radius: 10px 10px 0 0; */
+}
+.header-bar > img{
+  max-width: 25px;
+  max-height: 25px;
+}
+.header-bar > span{
+  color: white;
+  margin-left: 8px;
+  font-family: inter;
+}
+
