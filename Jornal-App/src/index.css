@@ -1,7 +1,9 @@
 *{
   box-sizing: border-box;
   margin: 0;
+  font-family:Arial, Helvetica, sans-serif;
 }
+
 .header-bar{
   background-color: #f55a5a;
   display: flex;
@@ -19,4 +21,50 @@
   margin-left: 8px;
   font-family: inter;
 }
+/* .main-article{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+} */
+.article{
+  display: flex;
+  width: 600px ;
+  justify-content: center;
+  margin: 20px;
+}
+.japan-image{
+  width: 100px;
+  height: 140px;
+  border-radius: 7px;
+}
+.event-info{
+  margin-left: 20px;
+}
+.marker{
+  width: 8px;
+  /* height: 10px; */
+}
+.location-link > span {
+font-size: 14px;
+}
+.location-link > a {
+  font-size: 12px;
+  margin-left: 10px;
+  color: gray;
+} 
+.location-name{
+  margin-bottom: 20px;
+}
+.date{
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.description{
+  font-size: 0.8rem;
+  max-width: 500px ;
+  line-height: 17px;
+  color: rgb(95, 94, 94);
+}
+
 
