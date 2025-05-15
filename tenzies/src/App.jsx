@@ -1,10 +1,11 @@
 import { useState } from "react"
+import Confetti from 'react-confetti-boom'
 
 import Die from "./components/Die"
 
 export default function App() {
 
-  const [diceArr, setDiceArr ] = useState(generateAllNewDice())
+  const [diceArr, setDiceArr ] = useState(() => generateAllNewDice())
   
 
   const gameWon = diceArr.every(die => die.isHeld) && 
@@ -35,11 +36,17 @@ export default function App() {
   }
 
   function rollDice(){
-    setDiceArr(oldDice => oldDice.map(die => 
-      die.isHeld ? 
-          die : {...die, value:Math.floor(Math.random() * 6) + 1}
-      ))
+    if(!gameWon){
+      setDiceArr(oldDice => oldDice.map(die => 
+        die.isHeld ? 
+            die : {...die, value:Math.floor(Math.random() * 6) + 1}
+        ))
+    }
+    else {
+      setDiceArr(generateAllNewDice())
+    }
   }
+    
 
  let diceElements = diceArr.map( die => (
     <Die 
@@ -52,12 +59,14 @@ export default function App() {
 
   return (
     <main> 
+      {gameWon && <Confetti />}  
       <h1 className="title"> Tenzies </h1>
       <p className="instruction"> Roll until dice are the same. Click each die to freeze at its current value between rolls </p>
       <div className="dice-container">
         {diceElements}
       </div>
-      <button className="roll-dice" onClick={rollDice}>
+      <button className="roll-dice" 
+      onClick= {rollDice}>
          {gameWon ? "New Game" : "Roll"} 
        </button>
     </main>
