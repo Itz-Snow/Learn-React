@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Hanken Grotesk", Arial, sans-serif;
+    background-color: #262626;
+    color: #D9D9D9;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+header {
+  text-align: center;
+}
+header > h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #f9f4da;
+}
+header > p {
+  font-size: 0.875rem;
+  color: #8e8e8e;
+  max-width: 400px;
+}
+
+section.game-status {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  color: #f9f4da;
+  margin-block: 20px;
+  min-height: 60px;
+  /* width: auto; */
+}
+section.game-status.won {
+  background-color: #10a95b;
+}
+section.game-status.lost {
+  background-color: #ba2a2a;
+}
+section.game-status > h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #f9f4da;
+  margin: 5px;
+}
+section.game-status > p {
+    margin: 4px;
+}
+
+.languages-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+span.language {
+  text-align: center;
+  padding: 3px;
+  border-radius: 4px;
+   position: relative;
+}
+/* Dimmed overlay with skull on "lost" languages */
+span.language.lost::before {
+    content: "💀";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 0.85rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+section.word {
+  display: flex;
+  justify-content: center;
+  margin-block: 10px;
+  gap: 2px;
+  margin-bottom: 30px;
+}
+
+section.word span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px ;
+  border-bottom: 1px solid #f9f4Da;
+  background-color: #323232;
+}
+section.keyboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 450px;
+  gap: 3px ;
+  margin-bottom: 30px;
+}
+
+section.keyboard button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width:  35px;
+  border-radius: 3px;
+  background-color: #fcba29 ;
+  border: 1px solid #d7d7d7;
+  cursor: pointer;
+}
+section.keyboard button:hover{
+  box-shadow: 0 0 8px #f8f0e3;
+  transition:  box-shadow 0.3s ease;
+}
+
+section.keyboard > button.wrong {
+  background-color: #ec5d49;
+}
+section.keyboard > button.correct {
+  background-color: #10a95b ;
+}
+section.game-button {
+  display: flex;
+  justify-content: center;
+}
+
+section.game-button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2ED3E9;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+section.game-button button:hover {
+  box-shadow: 0 0 8px #f5f5dc;
+  transition:  box-shadow 0.3s ease;
+}
